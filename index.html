@@ -124,7 +124,7 @@
       </svg>
     </div>
     <div>
-      <h1>Wevlo Push</h1>
+      <h1>MixCube Push</h1>
       <span>Test Device</span>
     </div>
   </header>
@@ -140,7 +140,7 @@
   <div class="card" id="setupCard">
     <h2>১. পুশ সার্ভার</h2>
     <label>Server Base URL</label>
-    <input type="text" id="baseUrl" class="mono" value="https://pushserver-37wj.onrender.com">
+    <input type="text" id="baseUrl" class="mono" value="https://push-service-ktxy.onrender.com">
     <div class="field-row">
       <div>
         <label>App ID</label>
@@ -155,7 +155,7 @@
     <h2 style="margin-top:22px;">২. VAPID Key</h2>
     <p class="lede" style="margin:0 0 10px;font-size:12px;">Firebase Console → Project settings → Cloud Messaging → Web configuration → Web Push certificates থেকে Key নিন।</p>
     <label>VAPID Key</label>
-    <input type="text" id="fbVapidKey" class="mono" placeholder="B...">
+    <input type="text" id="fbVapidKey" class="mono" placeholder="BPXLNZnnCI25Z7lYsgX8q7l9q0u-KkF-B_VpZLci14U1BKeJflKv75FXdPAy3QQ6pgTMsb7CrUbLNZJaaQHg2To">
 
     <button class="btn" id="connectBtn" onclick="connectDevice()">নোটিফিকেশন পারমিশন দিন ও কানেক্ট করুন</button>
     <div id="setupMsg"></div>
@@ -182,12 +182,12 @@
 let currentToken = null;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA1oGWkI4OyUtq1Oe-4a0i2u7oF_EkyvRk",
-  authDomain: "pushserver-8159b.firebaseapp.com",
-  projectId: "pushserver-8159b",
-  storageBucket: "pushserver-8159b.firebasestorage.app",
-  messagingSenderId: "1055841977627",
-  appId: "1:1055841977627:web:c97d8cca69cec84bfe7fbe"
+  apiKey: "AIzaSyDaJSdk3Ip2VxcggqPjAPxaI7Kb-l6aMBU",
+  authDomain: "pushe-service.firebaseapp.com",
+  projectId: "pushe-service",
+  storageBucket: "pushe-service.firebasestorage.app",
+  messagingSenderId: "656983741315",
+  appId: "1:656983741315:web:f0e71311c160e493d29cb6"
 };
 
 function setMsg(text, ok){
