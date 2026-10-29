@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">TaqwaNet</string>
+    <string name="app_subtitle">আপনার প্রাত্যহিক ইসলামিক সঙ্গী</string>
+
+    <!-- Navigation Tabs -->
+    <string name="nav_home">আজ</string>
+    <string name="nav_prayer">নামাজ</string>
+    <string name="nav_quran">কুরআন</string>
+    <string name="nav_qibla">কিবলা</string>
+    <string name="nav_more">আরও</string>
+
+    <!-- Prayers in Bengali -->
+    <string name="fajr">ফজর</string>
+    <string name="sunrise">সূর্যোদয়</string>
+    <string name="dhuhr">যোহর</string>
+    <string name="asr">আসর</string>
+    <string name="maghrib">মাগরিব</string>
+    <string name="isha">ইশা</string>
+
+    <!-- Prayers in Arabic -->
+    <string name="fajr_ar">الفجر</string>
+    <string name="sunrise_ar">الشروق</string>
+    <string name="dhuhr_ar">الظهر</string>
+    <string name="asr_ar">العصر</string>
+    <string name="maghrib_ar">المغرب</string>
+    <string name="isha_ar">العشاء</string>
+
+    <!-- Tracker & Actions -->
+    <string name="prayer_completed">আদায় করেছি</string>
+    <string name="prayer_not_completed">এখনো পড়িনি</string>
+    <string name="prohibited_time_alert">নামাজ পড়ার নিষিদ্ধ সময় চলছে</string>
+    <string name="next_prayer_in">পরবর্তী ওয়াক্ত শুরু হতে বাকি</string>
+
+    <!-- Notifications -->
+    <string name="prayer_start_channel">নামাজের ওয়াক্ত শুরু</string>
+    <string name="prayer_start_channel_desc">ওয়াক্ত শুরুর সময় আজান ও রিমাইন্ডার প্রদর্শন</string>
+    <string name="prayer_end_channel">ওয়াক্ত সমাপ্তি সতর্কতা</string>
+    <string name="prayer_end_channel_desc">ওয়াক্ত শেষ হওয়ার পূর্ববর্তী সতর্কতা</string>
+    <string name="islamic_reminders_channel">ইসলামিক রিমাইন্ডার</string>
+    <string name="islamic_reminders_channel_desc">জুমা ও নফল রোজার বিশেষ নোটিফিকেশন</string>
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- নোটিফিকেশন প্রদর্শন পারমিশন (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- নির্ধারিত সঠিক সময়ে আজান ও ওয়াক্ত এলার্মের জন্য এক্স্যাক্ট এলার্ম -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- ফোন রিস্টার্ট হলে অ্যালার্ম পুনরায় চালু করার পারমিশন -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- ভাইব্রেশন পারমিশন -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- ডিভাইস স্লিপ মোডে গেলেও সাউন্ড মসৃণ রাখার জন্য ওয়েক-লক -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- নামাজের সময় এবং কিবলা কোণ নির্ধারণের জন্য লোকেশন (ঐচ্ছিক) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- কুরআন অডিও স্ট্রিমিং ও ম্যাপের জন্য ইন্টারনেট -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- ব্যাকগ্রাউন্ডে সম্পূর্ণ আজান বা তিলাওয়াত চলার জন্য (Android 14+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+    <application
+        android:name=".TaqwaApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TaqwaNet"
+        tools:targetApi="35">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ফোন রিবুট হওয়ার পর অ্যালার্ম রিসিভার -->
+        <receiver
+            android:name=".core.notification.receivers.BootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- নামাজের অ্যালার্ম ট্রিগার রিসিভার -->
+        <receiver
+            android:name=".core.notification.receivers.PrayerAlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- নোটিফিকেশনের বোতাম ("আদায় করেছি" / "এখনো পড়িনি") রিসিভার -->
+        <receiver
+            android:name=".core.notification.receivers.NotificationActionReceiver"
+            android:enabled="true"
+            android:exported="false" />
+       <!-- ফায়ারবেস পুশ নোটিফিকেশন হ্যান্ডলার সার্ভিস -->
+        <service
+            android:name=".core.notification.TaqwaFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

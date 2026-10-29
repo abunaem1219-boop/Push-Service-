@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_emerald">#0A3A2F</color>
+    <color name="primary_emerald_dark">#05241C</color>
+    <color name="accent_gold">#D4AF37</color>
+    <color name="mint_light">#52B788</color>
+    <color name="surface_ivory">#F9F9F6</color>
+    <color name="prohibited_red">#D32F2F</color>
+    <color name="prohibited_red_bg">#2C0B0E</color>
+    <color name="card_dark_green">#0E2721</color>
+</resources>
